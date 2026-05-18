@@ -1,40 +1,132 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сложно сосредоточиться</title>
-    <script src="./scripts/script.js"></script>
-  </head>
-  <body class="page">
-    <header class="header decorated-zone">
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>Сложно сосредоточиться</title>
+  <link rel="icon" href="./images/favicon.ico" sizes="any">
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./images/mobile-icon.png">
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <link rel="stylesheet" href="./styles/variables.css">
+  <link rel="stylesheet" href="./styles/globals.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/dark.css">
+  <link rel="stylesheet" href="./styles/light.css">
+</head>
+<body class="page">
+  <header class="header decorated-zone">
+    <div class="header__rec" aria-hidden="true">REC</div>
+    <nav class="header__theme-menu">
+      <ul class="header__theme-menu-list">
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_type_light">
+            День
+          </button>
+        </li>
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto" disabled>
+            Авто
+          </button>
+        </li>
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_type_dark">
+            Неон
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <h1 class="header__title">no focus</h1>
+    <p class="header__description title-decor">Что делать, когда не можешь делать ничего<br>Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <h2 class="section__title">Почему сосредоточиться так сложно</h2>
+      <div class="section__content">
+        <article class="card">
+          <h3 class="card__title title-decor">Многозадачность</h3>
+          <p class="card__text">Особенно сложно сосредоточиться, когда задач много и все они — важные. Где же легендарная многозадачность, когда она так нужна? И дело не в том, что её «не существует». Просто как свидетельствуют исследования, «многозадачность» делает вас менее продуктивным. Вряд ли вам захочется это проверить на себе, но, как ни странно, логически в это можно поверить.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Дофамин</h3>
+          <p class="card__text">Нейробиологи утверждают, что главный враг концентрации — дофамин. Наши нейроны постоянно ищут дофамин: то, что подарит нам приятные ощущения. Так и отвлекаемся на всё новое и блестящее. Дофамин — это топливо для системы награды. Постоянно хочется получать новые порции вкусного, быстрого и яркого. Это и приводит к постоянным отвлечениям.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Синдром усталости</h3>
+          <p class="card__text">Мир непрерывного бесконечного бесконечного шума — социальные сети, уведомления, мессенджеры — потихоньку высасывает наше внимание. В таком информационном шуме сложно концентрироваться. А когда выключаешь уведомления, оказывается, что без них жить вполне реально, и концентрация возвращается. Проверено на себе.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h2>
+      <div class="section__content">
+        <div class="cards-group">
+          <h3 class="cards-group__title title-decor">5 простых (на самом деле не очень) привычек для продуктивности</h3>
+          <div class="cards-group__list">
+            <article class="card">
+              <h4 class="card__title title-decor">1. Уберите всё лишнее</h4>
+              <p class="card__text">Идеальное рабочее место должно быть пустым — ничего лишнего, что может отвлечь. Уберите телефон, игрушки, другие отвлекающие предметы со стола. Чем меньше визуального шума, тем легпе сосредоточиться.</p>
+            </article>
+            <article class="card">
+              <h4 class="card__title title-decor">2. Используйте специальные приложения</h4>
+              <p class="card__text">Существуют приложения, которые помогают сосредоточиться: Forest, Focus To-Do,番茄钟 и так далее. Они работают по принципу таймера — вы ставите таймер на 25 минут и работаете, а после этого делаете перерыв. Это очень просто и эффективно.</p>
+            </article>
+            <article class="card">
+              <h4 class="card__title title-decor">3. Практикуйте осознанность</h4>
+              <p class="card__text">Осознанность помогает нам стать более сфокусированными на текущем моменте. Попробуйте простые упражнения: сосредоточьтесь на дыхании, на ощущениях в теле, на звуках вокруг. Это поможет отключиться от постоянного потока мыслей и вернуть концентрацию.</p>
+            </article>
+            <article class="card">
+              <h4 class="card__title title-decor">4. Больше гуляйте</h4>
+              <p class="card__text">Прогулки на свежем воздухе — это не только полезно для здоровья, но и для концентрации. Они помогают отключиться от рабочих задач, проветрить голову и вернуться к делам с новыми силами. Учёные доказали, что прогулка в парке или лесу улучшает когнитивные способности.</p>
+            </article>
+            <article class="card">
+              <h4 class="card__title title-decor">5. Высыпайтесь</h4>
+              <p class="card__text">Сон — это база. Недостаток сна серьёзно ухудшает концентрацию, память и способность принимать решения. Старайтесь спать 7–8 часов в сутки, соблюдайте режим и создайте комфортные условия для сна.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">А что если я уже не могу никак? Или как выбраться из бесконечного цикла тревоги и прокрастинации</h2>
+      <div class="section__content">
+        <article class="card">
+          <h3 class="card__title title-decor">Прокрастинация — это не лень. Это способ защититься от стресса</h3>
+          <p class="card__text">Прокрастинация — это не лень, а защитный механизм. Когда мы боимся не справиться с задачей или сделать её неидеально, мозг откладывает её на потом. Чтобы победить прокрастинацию, попробуйте разбить большую задачу на маленькие шаги и хвалить себя за каждый выполненный шаг, даже самый маленький.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">Тревога — это тоже защитная реакция. И с ней можно работать</h3>
+          <p class="card__text">Тревога — это нормальная реакция на стресс. Но когда она становится хронической, она мешает жить и работать. Чтобы справиться с тревогой, попробуйте техники дыхания, медитацию, физическую активность. А если тревога не проходит — обратитесь к психологу.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title title-decor">А если ничего не помогает?</h3>
+          <p class="card__text">Если никакие методы не помогают, возможно, вам нужна профессиональная помощь. Не стесняйтесь обращаться к психологу или психотерапевту. Это не стыдно, а наоборот — признак силы и заботы о себе. Иногда нам всем нужна поддержка, и это нормально.</p>
+          <p class="card__text">И помните: вы не одни. Миллионы людей сталкиваются с такими же проблемами. Главное — не сдаваться и продолжать искать то, что работает именно для вас.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery-section">
+      <h2 class="section__title">А можно сериал «Во все тяжкие» посмотреть?</h2>
+      <div class="gallery">
+        <img class="gallery__image" src="./images/tape.png" alt="Кассета с плёнкой" loading="lazy">
+        <img class="gallery__image" src="./images/books.png" alt="Стопка книг" loading="lazy">
+        <img class="gallery__image" src="./images/ice-cream.png" alt="Мороженое в парке" loading="lazy">
+        <img class="gallery__image" src="./images/street.png" alt="Улица с домами" loading="lazy">
+        <img class="gallery__image" src="./images/sunset.png" alt="Закат на море" loading="lazy">
+        <img class="gallery__image" src="./images/cover-image.png" alt="Обложка альбома" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer decorated-zone">
+    <h2 class="footer__title">focus</h2>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
+</body>
 </html>

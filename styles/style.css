@@ -1,5 +1,326 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* Основные стили страницы */
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--padding-mobile);
+}
+
+/* Шапка */
+.header {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-block-size: 668px;
+  block-size: 100vh;
+  padding: var(--padding-mobile);
+  position: relative;
+  margin-block-end: 40px;
+}
+
+/* Декоративные уголки */
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inset-block-start: var(--padding-mobile);
+  inset-inline-end: var(--padding-mobile);
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--decorated-color);
+  border-inline-end: 1px solid var(--decorated-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inset-block-end: var(--padding-mobile);
+  inset-inline-start: var(--padding-mobile);
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--decorated-color);
+  border-inline-start: 1px solid var(--decorated-color);
+}
+
+/* Элемент REC */
+.header__rec {
+  position: absolute;
+  inset-block-start: var(--padding-mobile);
+  inset-inline-end: calc(var(--padding-mobile) + 28px);
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: var(--font-size-main);
+  line-height: 1.39;
+}
+
+.header__rec::after {
+  content: '';
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  margin-inline-start: 10px;
+  box-shadow: 0 0 4px var(--accent-color);
+}
+
+/* Меню тем */
+.header__theme-menu {
+  justify-self: end;
+  margin-block-end: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  color: var(--decorated-color);
+  text-transform: lowercase;
+  font-size: var(--font-size-main);
+  line-height: 1;
+  padding: 2px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button_active {
+  border-color: currentColor;
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--button-hover-border);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-color: currentColor;
+  outline: none;
+}
+
+/* Заголовок шапки */
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-block-end: 55px;
+}
+
+/* Описание в шапке */
+.header__description {
+  justify-self: end;
+  align-self: center;
+  max-inline-size: 355px;
+}
+
+/* Общий стиль для текста на цветном фоне */
+.title-decor {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-text-color);
+}
+
+/* Основной контент */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-block-end: 40px;
+}
+
+/* Секции */
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  color: var(--section-title-color);
+  font-size: var(--font-size-main);
+  font-weight: 700;
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Карточки */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__title {
+  font-size: var(--font-size-main);
+  font-weight: 700;
+}
+
+.card__text {
+  font-weight: 400;
+}
+
+/* Группа карточек */
+.cards-group__title {
+  font-size: var(--font-size-main);
+  font-weight: 700;
+  margin-block-end: 20px;
+}
+
+.cards-group__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Ссылки */
+.card__text a {
+  text-shadow: 2px 2px 0 var(--link-shadow-color);
+  text-decoration: none;
+}
+
+.card__text a:hover {
+  text-decoration: underline;
+}
+
+.card__text a:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* Галерея */
+.gallery-section {
+  gap: 10px;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* Футер */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 668px;
+  block-size: 100vh;
+  position: relative;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+/* Адаптив для планшетов (от 768px) */
+@media (min-width: 768px) {
+  .page {
+    padding: var(--padding-tablet);
+  }
+  
+  .header {
+    padding: var(--padding-tablet);
+    margin-block-end: 60px;
+  }
+  
+  .decorated-zone::before {
+    inset-block-start: var(--padding-tablet);
+    inset-inline-end: var(--padding-tablet);
+  }
+  
+  .decorated-zone::after {
+    inset-block-end: var(--padding-tablet);
+    inset-inline-start: var(--padding-tablet);
+  }
+  
+  .header__rec {
+    inset-block-start: var(--padding-tablet);
+    inset-inline-end: calc(var(--padding-tablet) + 28px);
+  }
+  
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-block-end: 110px;
+  }
+  
+  .header__description {
+    max-inline-size: 364px;
+  }
+  
+  .section {
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  
+  .section:first-of-type .section__content {
+    grid-column: 2;
+  }
+  
+  .gallery-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .gallery__image:first-child {
+    grid-column: span 2;
+  }
+  
+  .gallery__image:last-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .footer {
+    min-block-size: 1024px;
+  }
+  
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+/* Адаптив для десктопов (от 1024px) */
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    margin-block-end: 165px;
+  }
+  
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  
+  .header__description {
+    max-inline-size: 491px;
+  }
+  
+  .section {
+    gap: 10px;
+  }
+  
+  .cards-group .cards-group__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .cards-group__title {
+    grid-column: span 3;
+  }
+  
+  .footer {
+    min-block-size: 768px;
+  }
 }
